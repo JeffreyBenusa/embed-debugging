@@ -1,0 +1,12 @@
+/.env
+/.idea
+/vendor
+/configOG
+/working files/leadflex-header.psd
+/working files/leadflex-header2.psd
+.DS_Store
+/node_modules
+/web/webpack/main.css.map
+/config/project
+*.sql
+.ddev/*
