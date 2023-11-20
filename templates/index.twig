@@ -152,6 +152,19 @@
         <div id="main">
             <div class="content">
                 {{ craft.freeform.form("embed").render() }}
+                {# Script for updating the form's Hash and CSRF token loads after #}
+                <script>
+                    // Find the corresponding Form
+                    var form = document.querySelector('form');
+
+                    // Locate and update the Hash input
+                    var formHashInput = form.querySelector('input[name=formHash]');
+                    formHashInput.setAttribute('value', '{{ form.hash }}');
+
+                    // Locate and update the CSRF input
+                    var csrfInput = form.querySelector('input[name={{ craft.app.config.general.csrfTokenName|e('js') }}]');
+                    csrfInput.value = '{{ craft.app.request.csrfToken|e('js') }}';
+                </script>
             </div>
         </div>
     </div>
